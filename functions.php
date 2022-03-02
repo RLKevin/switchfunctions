@@ -344,28 +344,28 @@
 
         // ovverrides the default get_field function from ACF and returns a pretty version of the field
         function teamswitch_get_field($field, $page_id = null) {
-            
+		
             if (!class_exists('ACF')) {
                 return 'ACF has not been initialized';
             }
-
+    
             $field = get_field($field, $page_id);
-
-            // \ turns into <br/>
-            $pattern2 = '/\\/';
+    
+            // \ (backslash) turns into <br/>
+            $pattern2 = '/\\\/';
             $replacement2 = '<br/>';
             $field = preg_replace($pattern2, $replacement2, $field);
-
+    
             // *word* turns into <strong>word</strong>
             $pattern = '/(.*)\*(.*)\*(.*)/';
             $replacement = '$1<strong>$2</strong>$3';
             $field = preg_replace($pattern, $replacement, $field);
-
-            // **word** turns into <em>word</em>
-            $pattern = '/(.*)\*\*(.*)\*\*(.*)/';
+    
+            // _word_ turns into <em>word</em>
+            $pattern = '/(.*)_(.*)_(.*)/';
             $replacement = '$1<em>$2</em>$3';
             $field = preg_replace($pattern, $replacement, $field);
-
+    
             return $field;
         }
 
