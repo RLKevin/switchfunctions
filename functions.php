@@ -341,7 +341,7 @@
     // miscellaneous helper functions
 
         // ovverrides the default get_field function from ACF and returns a pretty version of the field
-        function teamswitch_get_field($field, $page_id = null) {
+        function get_fancy_field($field, $page_id = null) {
 		
             if (!class_exists('ACF')) {
                 return 'ACF has not been initialized';
