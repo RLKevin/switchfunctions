@@ -257,16 +257,14 @@
 		function update_facebook() {
 
 			// vars
-			$fb_page = '233843225214839';
-			$fb_access_token = 'EAAMxBP3IDlABAC9BmSZCdafrRIvyb6GYQyvjfZAz7Q97pRPsuZCpzaVWzFYonarOmD0JzzQIphCmiWyv843wWcGFSrc2H6s61GgHGa1uZBAWZCAMdpPLfXKNTje2lDnj7QVbGCdLTJVydiDwkpTxM2Agr9b7RiRHZCZCZCTJAmZAHpiCYjPNsrDKuy3rS4AvQpm9vor7JwnbhdAZDZD';
+			$fb_page = '';
+			$fb_access_token = '';
 
 			if ($fb_page && $fb_access_token) {
 				
 				// vars
 				$fb_json = 'https://graph.facebook.com/v12.0/' . $fb_page . '/posts?access_token=' . $fb_access_token . '&fields=id,created_time,full_picture,message,status_type,permalink_url&limit=36';
 				$fb_results = json_decode(file_get_contents($fb_json),true);
-
-				// https://graph.facebook.com/v12.0/233843225214839/posts?access_token=EAAMxBP3IDlABAC9BmSZCdafrRIvyb6GYQyvjfZAz7Q97pRPsuZCpzaVWzFYonarOmD0JzzQIphCmiWyv843wWcGFSrc2H6s61GgHGa1uZBAWZCAMdpPLfXKNTje2lDnj7QVbGCdLTJVydiDwkpTxM2Agr9b7RiRHZCZCZCTJAmZAHpiCYjPNsrDKuy3rS4AvQpm9vor7JwnbhdAZDZD&fields=id,created_time,full_picture,message,status_type,permalink_url&limit=36';
 
 				// console_log($fb_results['data']);
 
